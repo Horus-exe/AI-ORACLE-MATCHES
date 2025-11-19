@@ -107,25 +107,44 @@ st.markdown("""
 
 def get_team_stats():
     # Stats ajustadas para Noviembre 2025
+    # 'form': Factor de forma (1.0 = Normal, >1.0 = On Fire, <1.0 = Mala racha/Lesiones)
     return {
-        'Man City': {'att': 96, 'def': 90, 'form': 0.9}, 'Leverkusen': {'att': 91, 'def': 87, 'form': 1.0},
-        'Barcelona': {'att': 97, 'def': 88, 'form': 1.2}, 'Chelsea': {'att': 92, 'def': 89, 'form': 1.1},
-        'Arsenal': {'att': 94, 'def': 95, 'form': 1.1}, 'Bayern Munich': {'att': 96, 'def': 91, 'form': 1.0},
-        'Liverpool': {'att': 95, 'def': 93, 'form': 1.15}, 'Real Madrid': {'att': 96, 'def': 90, 'form': 0.95},
-        'Inter Milan': {'att': 90, 'def': 94, 'form': 1.05}, 'PSG': {'att': 91, 'def': 87, 'form': 0.9},
-        'Atletico Madrid': {'att': 87, 'def': 92, 'form': 1.0}, 'Dortmund': {'att': 88, 'def': 85, 'form': 1.05},
-        'Juventus': {'att': 84, 'def': 92, 'form': 1.0}, 'Napoli': {'att': 89, 'def': 88, 'form': 1.1},
-        'Tottenham': {'att': 88, 'def': 85, 'form': 0.95}, 'Benfica': {'att': 85, 'def': 83, 'form': 1.0},
-        'Sporting CP': {'att': 89, 'def': 84, 'form': 1.1}, 'Atalanta': {'att': 86, 'def': 84, 'form': 1.05},
-        'Ajax': {'att': 82, 'def': 79, 'form': 1.0}, 'Marseille': {'att': 83, 'def': 81, 'form': 1.0},
-        'Newcastle': {'att': 85, 'def': 84, 'form': 0.9}, 'Villarreal': {'att': 84, 'def': 83, 'form': 0.95},
-        'PSV': {'att': 84, 'def': 80, 'form': 1.0}, 'Eintracht': {'att': 81, 'def': 80, 'form': 1.0},
-        'Athletic Club': {'att': 83, 'def': 86, 'form': 1.1}, 'Galatasaray': {'att': 80, 'def': 76, 'form': 1.05},
-        'Monaco': {'att': 85, 'def': 83, 'form': 1.0}, 'Club Brugge': {'att': 79, 'def': 78, 'form': 0.9},
-        'Slavia Praha': {'att': 76, 'def': 75, 'form': 0.9}, 'Olympiacos': {'att': 78, 'def': 77, 'form': 1.0},
-        'Qarabag': {'att': 70, 'def': 68, 'form': 0.8}, 'Union St-Gilloise': {'att': 74, 'def': 75, 'form': 0.9},
-        'Bodo/Glimt': {'att': 75, 'def': 73, 'form': 1.1}, 'Pafos': {'att': 65, 'def': 62, 'form': 0.8},
-        'Copenhagen': {'att': 73, 'def': 72, 'form': 0.9}, 'Kairat Almaty': {'att': 60, 'def': 58, 'form': 0.7},
+        'Man City': {'att': 96, 'def': 90, 'form': 0.95},  # Pequeño bajón
+        'Leverkusen': {'att': 91, 'def': 87, 'form': 1.0},
+        'Barcelona': {'att': 97, 'def': 88, 'form': 1.2},  # ESTADO DE GRACIA
+        'Chelsea': {'att': 92, 'def': 89, 'form': 1.1},
+        'Arsenal': {'att': 94, 'def': 95, 'form': 1.1},
+        'Bayern Munich': {'att': 96, 'def': 91, 'form': 1.0},
+        'Liverpool': {'att': 95, 'def': 93, 'form': 1.15},  # Muy fuertes
+        'Real Madrid': {'att': 96, 'def': 90, 'form': 0.95},  # Irregular
+        'Inter Milan': {'att': 90, 'def': 94, 'form': 1.05},
+        'PSG': {'att': 91, 'def': 87, 'form': 0.9},  # Dudas en Europa
+        'Atletico Madrid': {'att': 87, 'def': 92, 'form': 1.0},
+        'Dortmund': {'att': 88, 'def': 85, 'form': 1.05},
+        'Juventus': {'att': 84, 'def': 92, 'form': 1.0},
+        'Napoli': {'att': 89, 'def': 88, 'form': 1.1},
+        'Tottenham': {'att': 88, 'def': 85, 'form': 0.95},
+        'Benfica': {'att': 85, 'def': 83, 'form': 1.0},
+        'Sporting CP': {'att': 89, 'def': 84, 'form': 1.1},
+        'Atalanta': {'att': 86, 'def': 84, 'form': 1.05},
+        'Ajax': {'att': 82, 'def': 79, 'form': 1.0},
+        'Marseille': {'att': 83, 'def': 81, 'form': 1.0},
+        'Newcastle': {'att': 85, 'def': 84, 'form': 0.9},
+        'Villarreal': {'att': 84, 'def': 83, 'form': 0.95},
+        'PSV': {'att': 84, 'def': 80, 'form': 1.0},
+        'Eintracht': {'att': 81, 'def': 80, 'form': 1.0},
+        'Athletic Club': {'att': 83, 'def': 86, 'form': 1.1},
+        'Galatasaray': {'att': 80, 'def': 76, 'form': 1.05},
+        'Monaco': {'att': 85, 'def': 83, 'form': 1.0},
+        'Club Brugge': {'att': 79, 'def': 78, 'form': 0.9},
+        'Slavia Praha': {'att': 76, 'def': 75, 'form': 0.9},
+        'Olympiacos': {'att': 78, 'def': 77, 'form': 1.0},
+        'Qarabag': {'att': 70, 'def': 68, 'form': 0.8},
+        'Union St-Gilloise': {'att': 74, 'def': 75, 'form': 0.9},
+        'Bodo/Glimt': {'att': 75, 'def': 73, 'form': 1.1},
+        'Pafos': {'att': 65, 'def': 62, 'form': 0.8},
+        'Copenhagen': {'att': 73, 'def': 72, 'form': 0.9},
+        'Kairat Almaty': {'att': 60, 'def': 58, 'form': 0.7},
     }
 
 
@@ -144,26 +163,35 @@ def get_fixtures():
         {"Local": "Olympiacos", "Visitante": "Real Madrid", "Dia": "Miércoles 26"},
     ]
 
-# 3. MOTOR IA & CÁLCULO DE CUOTAS
+# 3. MOTOR IA & CÁLCULO DE CUOTAS (CON SEMILLA FIJA PARA ESTABILIDAD)
 
 
 @st.cache_data
 def train_and_predict():
+    # FIJAMOS LA SEMILLA PARA QUE LOS RESULTADOS SEAN CONSISTENTES SIEMPRE
+    np.random.seed(42)
+
     stats = get_team_stats()
     teams = list(stats.keys())
     X, y = [], []
-    for _ in range(3000):
+
+    # Simulamos 5000 partidos para entrenamiento
+    for _ in range(5000):
         h, a = np.random.choice(teams, 2, replace=False)
         h_d, a_d = stats[h], stats[a]
-        lh = (h_d['att']/a_d['def']) * 1.3 * h_d['form']
-        la = (a_d['att']/h_d['def']) * 1.0 * a_d['form']
+
+        # Lógica de Goles: (Ataque / Defensa Rival) * Factor Forma * Factor Azar
+        lh = (h_d['att']/a_d['def']) * 1.35 * h_d['form']
+        la = (a_d['att']/h_d['def']) * 1.05 * a_d['form']
+
         gh, ga = np.random.poisson(lh), np.random.poisson(la)
+
         res = 0 if gh > ga else (2 if ga > gh else 1)  # 0:L, 1:E, 2:V
         X.append([h_d['att'], h_d['def'], h_d['form'],
                  a_d['att'], a_d['def'], a_d['form']])
         y.append(res)
 
-    model = RandomForestClassifier(n_estimators=100).fit(X, y)
+    model = RandomForestClassifier(n_estimators=150, random_state=42).fit(X, y)
     return model, stats
 
 
